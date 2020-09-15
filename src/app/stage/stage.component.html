@@ -1,0 +1,36 @@
+<div class="flexcolumn">
+  <span
+    class="center stageNumber"
+    [ngClass]="{
+      'text-color-completed': stageData.isCompleted == 1,
+      'text-color-processing': stageData.isCompleted == -1 || 0
+    }"
+    >Stage {{ stageData.stageNumber }}</span
+  >
+  <div
+    class="base-container flexcolumn"
+    [ngClass]="{
+      'yet-to-start': stageData.isCompleted == -1,
+      'in-progress': stageData.isCompleted == 0,
+      completed: stageData.isCompleted == 1
+    }"
+  >
+    <p class="task center" *ngFor="let task of stageData.tasks">
+      {{ task.name }}
+    </p>
+  </div>
+  <p
+    class="date"
+    [ngClass]="{
+      'text-color-completed': stageData.isCompleted == 1,
+      'text-color-processing': stageData.isCompleted == -1 || 0
+    }"
+  >
+    {{ stageData.startDate | date: "dd'th' MMM" }} -
+    {{ stageData.endDate | date: "dd'th' MMM" }}
+  </p>
+
+  <div class="prog-circle"></div>
+  <hr class="progressed" [ngClass]="{ yts: stageData.isCompleted === -1 }" />
+  <hr class="inp" *ngIf="stageData.isCompleted === 0" />
+</div>

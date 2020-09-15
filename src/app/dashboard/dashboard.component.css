@@ -1,0 +1,110 @@
+/* ------------------------toolbar ----------------------------------*/
+.example-spacer {
+  flex: 1 1 auto;
+}
+.title {
+  font-size: 1rem;
+}
+.toolbar {
+  background-color: white;
+  color: rgb(29, 73, 104);
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0;
+  z-index: 1000;
+  height: auto;
+}
+
+.countdown{
+    font-size: 0.85rem;
+    line-height: 20%;
+}
+
+/*------------------------ side nav --------------------------------------*/
+h4 {
+  display: inline-block;
+}
+mat-icon {
+  vertical-align: center;
+  display: inline-block;
+}
+
+.datefont {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+#clock {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-right: -0.6rem;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+  margin-top: -1rem;
+  margin-bottom: 0.75rem;
+}
+.li {
+  font-size: 0.75rem;
+  vertical-align: auto;
+}
+mat-drawer {
+  /* fix on left end */
+  position: fixed;
+  top: 2.5rem;
+  bottom: 0;
+  /* color and font*/
+  color: lightgrey;
+  background-image: linear-gradient(rgb(33,73,103),rgb(92,143,183));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  /* width */
+  width: 20%;
+  padding: 1rem;
+  padding-right: 0rem;
+}
+h3 {
+  vertical-align: center;
+}
+.i {
+  width: 40px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/*----------------------------------------Main Content------------------------------  */
+.bluecolor {
+  color: rgb(29, 73, 104);
+  font-weight: 600;
+}
+
+.whitecolor{
+    color: white;
+    font-weight:450;
+}
+header {
+  background-color: rgb(228, 228, 228);
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  height: 1.5rem;
+  padding-left: 1.5rem;
+}
+.grid {
+  display: grid;
+  width:100%;
+  grid-gap: 0rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.75rem;
+}
+
+.mat-drawer-content {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    
+}

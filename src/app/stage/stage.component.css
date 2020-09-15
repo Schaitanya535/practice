@@ -1,0 +1,93 @@
+.center {
+  text-align: center;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.base-container {
+  width: 200px;
+  height: 75px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+.yet-to-start {
+  background-color: lightgrey;
+  color: rgb(29, 73, 104);
+  border-bottom: 0.25rem solid rgb(29, 73, 104);
+}
+
+.in-progress {
+  color: lightgrey;
+  background-color: rgb(29, 73, 104);
+  border-bottom: 0.25rem solid rgb(29, 73, 104);
+}
+
+.completed {
+  color: white;
+  background-color: rgb(19, 170, 82);
+  border-bottom: 0.25rem solid grey;
+}
+.stageNumber {
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.date {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+
+.text-color-completed {
+  color: rgb(19, 170, 82);
+}
+
+.text-color-processing {
+  color: rgb(29, 73, 104);
+}
+
+/* circle line */
+
+.prog-circle {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border: 7px solid rgb(33, 78, 111);
+  border-radius: 22px;
+  z-index: 1;
+}
+
+hr {
+    height:0;
+}
+
+hr.progressed {
+  position: relative;
+  border-top: 10px solid rgb(33, 78, 111);
+  bottom: 35px;
+  width: 100%;
+}
+
+hr.inp {
+    position: relative;
+    border-top: 10px solid rgb(223, 223, 223);
+    bottom: 60px;
+    right: 0;
+    width: 100%;
+ 
+}
+
+.prog-circle.yts {
+    border-color: rgb(223, 223, 223);
+}
+ 
+ 
+hr.yts {
+    border-top-color: rgb(223, 223, 223);
+}
+ 
+
