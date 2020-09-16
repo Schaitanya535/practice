@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
   constructor() {}
 
-  // initialize countdown upon initialistion
+  // initialize countdown upon initialistion using an obersavble
   
   ngOnInit(): void {
     this.counter$ = interval(1000).pipe(

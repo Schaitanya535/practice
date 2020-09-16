@@ -91,6 +91,7 @@
           [ngClass]="{
             whitecolor: stage.isCompleted === 1 || stage.isCompleted === 0
           }"
+          class="li"
         >
           <mat-icon *ngIf="!task.isCompleted" class="li">stop_circle</mat-icon
           ><mat-icon *ngIf="task.isCompleted" class="li"
@@ -101,7 +102,7 @@
     </ng-container>
     <hr />
     <!-- previous appraisal -->
-    <h3 class="whitecolor">
+    <h3 class="whitecolor appraisal">
       <mat-icon class="i">history</mat-icon>Previous Appraisal
     </h3>
   </mat-drawer>
