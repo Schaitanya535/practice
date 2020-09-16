@@ -42,10 +42,10 @@ export const stages: stage[] = [
   },
   {
     stageNumber: 5,
-    tasks: [{ name: "L1 consolidation & approvals", isCompleted: false }],
+    tasks: [{ name: "L1 consolidation & approvals", isCompleted: true }],
     startDate: new Date("9/13/2020"),
     endDate: new Date("9/16/2020"),
-    isCompleted: progress.inProcess,
+    isCompleted: progress.completed,
   },
   {
     stageNumber: 6,

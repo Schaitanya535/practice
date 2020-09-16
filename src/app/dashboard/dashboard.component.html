@@ -14,7 +14,8 @@
   <!--count down -->
   <span class="example-spacer"></span>
   <span class="countdown">
-    {{ message }} <br> to complete stage-{{ onGoingStage.stageNumber }}
+    {{ message }} <br />
+    to complete stage-{{ onGoingStage.stageNumber }}
     <mat-icon class="i">timer</mat-icon>
   </span>
   <!-- icon menu-->
@@ -41,7 +42,7 @@
 
 <!-- Side Navigation + Content -->
 <mat-drawer-container class="example-container">
-    <!-- side drawer -->
+  <!-- side drawer -->
   <mat-drawer mode="side" opened #sidenav>
     <h3 class="whitecolor">
       <mat-icon class="i">dashboard</mat-icon> Dashboard
@@ -50,22 +51,46 @@
     <h3 class="whitecolor"><mat-icon class="i">language</mat-icon>Appraisal</h3>
     <!-- stages -->
     <ng-container *ngFor="let stage of stagesData">
-      <h4 [ngClass]="{ whitecolor: stage.isCompleted === 1 }">
+      <h4
+        [ngClass]="{
+          whitecolor: stage.isCompleted === 1 || stage.isCompleted === 0
+        }"
+      >
         Stage {{ stage.stageNumber }}
       </h4>
-      <mat-icon id="clock" class="clock">schedule</mat-icon>
+      <mat-icon
+        id="clock"
+        class="clock"
+        [ngClass]="{
+          whitecolor: stage.isCompleted === 1 || stage.isCompleted === 0
+        }"
+        >schedule</mat-icon
+      >
       <span
+        *ngIf="stage.stageNumber != onGoingStage.stageNumber"
         class="datefont"
-        [ngClass]="{ whitecolor: stage.isCompleted === 1 }"
+        [ngClass]="{
+          whitecolor: stage.isCompleted === 1 || stage.isCompleted === 0
+        }"
       >
         {{ stage.startDate | date: "dd'th' MMM" }} -
         {{ stage.endDate | date: "dd'th' MMM" }}
       </span>
+      <span
+        *ngIf="stage.stageNumber === onGoingStage.stageNumber"
+        class="datefont"
+        [ngClass]="{ whitecolor: stage.isCompleted === 0 }"
+      >
+        {{ message }}
+      </span>
+
       <!-- taks in stages -->
       <ul>
         <li
           *ngFor="let task of stage.tasks"
-          [ngClass]="{ whitecolor: stage.isCompleted === 1 }"
+          [ngClass]="{
+            whitecolor: stage.isCompleted === 1 || stage.isCompleted === 0
+          }"
         >
           <mat-icon *ngIf="!task.isCompleted" class="li">stop_circle</mat-icon
           ><mat-icon *ngIf="task.isCompleted" class="li"
