@@ -17,7 +17,9 @@
 
 .countdown{
     font-size: 0.85rem;
-    line-height: 20%;
+    line-height: 110%;
+    text-align: end;
+    margin-right: 0.2rem;
 }
 
 /*------------------------ side nav --------------------------------------*/
