@@ -1,0 +1,103 @@
+* {
+  background: #EEEFF1;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+th{
+  width: 25%;
+  background-color: rgb(95,106,112);
+  color:white;
+
+}
+td
+{
+  width: 25%;
+  background-color: white;
+  color:rgb(95,106,112);
+  border:1px, solid transparent;
+  border-radius: 0.25rem;
+}
+
+mat-paginator{
+  background:  rgb(95,106,112);
+  color: white;
+}
+/* flex */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-colomn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* container */
+.container {
+  padding: 1rem;
+  background: #EEEFF1;
+}
+
+/* title */
+.title {
+  justify-content: space-between;
+  height: 35px;
+}
+
+.title h2 {
+  color: grey;
+  font-weight: 600;
+}
+
+.title button {
+  background-color: #ED6F17;
+  color: white;
+  height:2rem;
+}
+
+.title mat-icon {
+  color: orange;
+  font-size: 1.25rem;
+  background-color: white;
+  border: 0.25px solid white;
+  border-radius: 18px;
+  margin-right: 0.25rem;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 18px;
+  width: 18px;
+}
+
+
+/* search box */
+.search-div {
+  width: 200px;
+  align-self: flex-end;
+}
+
+td mat-icon{
+  cursor: pointer;
+  margin: 0.25rem 0.5rem;
+  background: white;
+}
+
+.search-div input{
+  background: white;
+  color: darkgrey;
+  padding:0.5rem 0.75rem;
+  margin:0.5rem 0rem;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  width:88%;
+}
+

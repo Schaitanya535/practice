@@ -1,0 +1,118 @@
+<div class="main">
+  <header>
+    <h1>{{ add }} Employee</h1>
+    <mat-icon mat-dialog-close class="close">clear</mat-icon>
+  </header>
+
+  <form class="form flex-column" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- formcontrolname is used in TS file to validate the form  -->
+    <!-- ngClass is used to add specific class based on some conditions -->
+    <!-- appAlphabetOnly is a directive that control the behaviour of form -->
+    <div class="flex-column margin">
+      <label for="name">Name</label>
+      <input
+        required
+        type="text"
+        placeholder="Name*"
+        formControlName="name"
+        [ngClass]="{
+          invalid: form.get('name').touched && form.get('name').errors
+        }"
+        appAlphabetOnly
+      />
+      <small
+        *ngIf="
+          form.get('name').touched && form.get('name').hasError('required')
+        "
+      >
+        Name is Required
+      </small>
+      <small
+        *ngIf="
+          form.get('name').touched && form.get('name').hasError('minlength')
+        "
+      >
+        Minimum 3 Characters
+      </small>
+      <small
+        *ngIf="
+          form.get('name').touched && form.get('name').hasError('maxlength')
+        "
+      >
+        Maximum 150 Characters
+      </small>
+    </div>
+
+    <div class="flex-column margin">
+      <label for="email">Email</label>
+      <input
+        required
+        type="text"
+        placeholder="Email*"
+        formControlName="email"
+        [ngClass]="{
+          invalid: form.get('email').touched && form.get('email').errors
+        }"
+      />
+      <small
+        *ngIf="
+          form.get('email').touched && form.get('email').hasError('required')
+        "
+      >
+        Email is Required
+      </small>
+      <small
+        *ngIf="
+          form.get('email').touched && form.get('email').hasError('minlength')
+        "
+      >
+        Minimum 3 Characters
+      </small>
+      <small
+        *ngIf="
+          form.get('email').touched && form.get('email').hasError('maxlength')
+        "
+      >
+        Maximum 150 Characters
+      </small>
+      <small
+        *ngIf="form.get('email').touched && form.get('email').hasError('email')"
+      >
+        Enter Valid Email
+      </small>
+    </div>
+
+    <div class="flex-column margin">
+      <label for="role">Select Role:</label>
+      <select
+        formControlName="role"
+        required
+        [ngClass]="{
+          invalid: form.get('role').touched && form.get('role').errors
+        }"
+      >
+        <option value="0">Analyst</option>
+        <option value="1">Manager</option>
+      </select>
+      <small
+        *ngIf="
+          form.get('role').touched && form.get('role').hasError('required')
+        "
+      >
+        Role is Required
+      </small>
+    </div>
+
+    <div class="flex-row flex-end">
+      <button type="button" mat-dialog-close class="cancel">Cancel</button>
+      <button
+        type="submit"
+        [disabled]="!form.valid"
+        mat-dialog-close
+        class="save"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>

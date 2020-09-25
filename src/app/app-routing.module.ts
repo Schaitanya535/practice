@@ -1,3 +1,5 @@
+import { FormComponent } from './form/form.component';
+import { UserComponent } from './user/user.component';
 import { StageComponent } from "./stage/stage.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
@@ -6,8 +8,10 @@ import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   { path: "dashboard", component: DashboardComponent },
-  { path: "", redirectTo: "dashboard", pathMatch: "full" },
+  { path: "", redirectTo: "userbase", pathMatch: "full" },
   { path: "stage", component: StageComponent },
+  {path: "userbase", component: UserComponent},
+
 ];
 
 @NgModule({
